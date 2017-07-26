@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">NFCard</string>
+	<string name="menu_clear">清屏</string>
+	<string name="menu_help">幫助</string>
+	<string name="menu_about">關於</string>
+	<string name="btn_copy">復制</string>
+	<string name="btn_nfc">設置</string>
+	<string name="btn_exit">退出</string>
+	<string name="tip_nfc_notfound">沒有NFC硬件！</string>
+	<string name="tip_nfc_disabled">NFC已禁用</string>
+	<string name="tip_nfc_enabled">NFC已啟用</string>	
+	<string name="msg_reading">讀取中...</string>
+	<string name="msg_nonfc">沒有找到NFC硬件，程序無法工作！</string>
+	<string name="msg_nfcdisabled">NFC已被禁用，請先啟用該硬件。可以使用下方的 ‘設置’ 按鈕控制NFC傳感器的開關。</string>
+	<string name="msg_nocard">沒有卡片信息，請將卡片靠近手機後蓋嘗試重新讀取。</string>
+	<string name="msg_copied">卡片信息已經復制到剪貼板</string>
+	<string name="lab_id">標識：</string>
+	<string name="lab_pmm">參數：</string>
+	<string name="lab_serl">序號：</string>
+	<string name="lab_ver">版本：</string>
+	<string name="lab_date">生效：</string>
+	<string name="lab_op">使用：</string>
+	<string name="lab_log">交易記錄：</string>
+	<string name="lab_balance">余額：</string>
+	<string name="lab_cur_cny">圆</string>
+	<string name="lab_cur_hkd">港幣</string>
+	<string name="lab_op_time">次</string>
+	<string name="lab_user_id">讀者證號：</string>
+	<string name="lab_bktg_sn">書籍編號：</string>
+	<string name="lab_bkcat">書籍類別：</string>
+
+	<string name="name_bkcat_soc">社會科學</string>
+	<string name="name_bkcat_sci">自然科學</string>
+	<string name="name_bkcat_ltr">文學</string>
+	<string name="name_octopuscard">八達通卡（香港）</string>
+	<string name="name_szt">深圳通卡</string>
+	<string name="name_szt_f">深圳通卡（舊版）</string>
+	<string name="name_lnt">嶺南通卡（羊城通）</string>
+	<string name="name_wht">武漢城市一卡通</string>
+	<string name="name_cac">長安通卡</string>
+	<string name="name_bj">北京市政交通卡</string>
+	<string name="name_bj_m">北京市政交通卡（舊版）</string>
+	<string name="name_unknowntag">未知的電子標簽</string>
+	<string name="name_szlib_center">深圳圖書館（市民中心）</string>
+	<string name="name_szlib_nanshan">深圳圖書館（南山）</string>
+	<string name="name_lib_readercard">讀者證</string>
+	<string name="name_lib_booktag">書籍標簽</string>
+
+</resources>

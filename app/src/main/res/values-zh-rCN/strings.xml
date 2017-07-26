@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFCard</string>
+    <string name="menu_clear">清屏</string>
+    <string name="menu_help">帮助</string>
+    <string name="menu_about">关于</string>
+    <string name="btn_copy">复制</string>
+    <string name="btn_nfc">设置</string>
+    <string name="btn_exit">退出</string>
+    <string name="tip_nfc_notfound">没有NFC硬件！</string>
+    <string name="tip_nfc_disabled">NFC已禁用</string>
+    <string name="tip_nfc_enabled">NFC已启用</string>
+    <string name="msg_reading">读取中...</string>
+    <string name="msg_nonfc">没有找到NFC硬件，程序无法工作！</string>
+    <string name="msg_nfcdisabled">NFC已被禁用，请先启用该硬件。可以使用下边的 ‘设置’ 按钮控制NFC传感器的开关。</string>
+    <string name="msg_nocard">没有卡片信息，请将卡片靠近手机后盖尝试重新读取。</string>
+    <string name="msg_copied">卡片信息已经复制到剪贴板</string>
+    <string name="lab_id">标识：</string>
+    <string name="lab_pmm">参数：</string>
+    <string name="lab_serl">序号：</string>
+    <string name="lab_ver">版本：</string>
+    <string name="lab_date">生效：</string>
+    <string name="lab_op">使用：</string>
+    <string name="lab_log">交易记录：</string>
+    <string name="lab_balance">余额：</string>
+    <string name="lab_cur_cny">元</string>
+    <string name="lab_cur_hkd">港币</string>
+    <string name="lab_op_time">次</string>
+    <string name="lab_user_id">读者证号：</string>
+    <string name="lab_bktg_sn">书籍编号：</string>
+    <string name="lab_bkcat">书籍类别：</string>
+
+    <string name="name_bkcat_soc">社会科学</string>
+    <string name="name_bkcat_sci">自然科学</string>
+    <string name="name_bkcat_ltr">文学</string>
+    <string name="name_octopuscard">八达通卡（香港）</string>
+    <string name="name_szt">深圳通卡</string>
+    <string name="name_szt_f">深圳通卡（旧版）</string>
+    <string name="name_lnt">岭南通卡（羊城通）</string>
+    <string name="name_wht">武汉城市一卡通</string>
+    <string name="name_cac">长安通卡</string>
+    <string name="name_bj">北京市政交通卡</string>
+    <string name="name_bj_m">北京市政交通卡（旧版）</string>
+    <string name="name_unknowntag">未知的电子标签</string>
+    <string name="name_szlib_center">深圳图书馆（市民中心）</string>
+    <string name="name_szlib_nanshan">深圳图书馆（南山）</string>
+    <string name="name_lib_readercard">读者证</string>
+    <string name="name_lib_booktag">书籍标签</string>
+
+</resources>

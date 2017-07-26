@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.sinpo.xnfc" android:versionCode="1" android:versionName="1.1.111223">
+	<uses-sdk android:minSdkVersion="8" />
+
+	<application android:icon="@drawable/nfc" android:label="@string/app_name">
+		<activity android:name="NFCard" android:label="@string/app_name"
+			android:configChanges="keyboardHidden|orientation"
+			android:screenOrientation="portrait" android:launchMode="singleTask"
+			android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden"
+			android:windowBackground="@null">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.nfc.action.TECH_DISCOVERED" />
+			</intent-filter>
+			<meta-data android:name="android.nfc.action.TECH_DISCOVERED"
+				android:resource="@xml/nfc_tech_filter" />
+			<intent-filter>
+				<action android:name="android.nfc.action.TAG_DISCOVERED" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+	</application>
+	<uses-permission android:name="android.permission.NFC" />
+	<uses-feature android:name="android.hardware.nfc"
+		android:required="true" />
+</manifest>
