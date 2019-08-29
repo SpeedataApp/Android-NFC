@@ -13,9 +13,7 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card;
-
-import com.sinpo.xnfc.tech.card.pboc.PbocCard;
+package com.nfc;
 
 import android.content.IntentFilter;
 import android.content.res.Resources;
@@ -26,6 +24,9 @@ import android.nfc.tech.NfcF;
 import android.nfc.tech.NfcV;
 import android.os.Parcelable;
 import android.util.Log;
+
+import com.nfc.pboc.PbocCard;
+
 
 public final class CardManager {
 	//private static final String SP = "<br />------------------------------<br /><br />";

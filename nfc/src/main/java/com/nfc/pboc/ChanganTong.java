@@ -13,26 +13,27 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card.pboc;
-
-import java.util.ArrayList;
+package com.nfc.pboc;
 
 import android.content.res.Resources;
 
-import com.sinpo.xnfc.R;
-import com.sinpo.xnfc.tech.Iso7816;
+import com.nfc.Iso7816;
+import com.nfc.R;
 
-final class ShenzhenTong extends PbocCard {
-	private final static byte[] DFN_SRV = { (byte) 'P', (byte) 'A', (byte) 'Y',
-			(byte) '.', (byte) 'S', (byte) 'Z', (byte) 'T' };
+import java.util.ArrayList;
 
-	private ShenzhenTong(Iso7816.Tag tag, Resources res) {
+final class ChanganTong extends PbocCard {
+	private final static byte[] DFN_SRV = { (byte) 0xA0, (byte) 0x00,
+			(byte) 0x00, (byte) 0x00, (byte) 0x03, (byte) 0x86, (byte) 0x98,
+			(byte) 0x07, (byte) 0x01, };
+
+	private ChanganTong(Iso7816.Tag tag, Resources res) {
 		super(tag);
-		name = res.getString(R.string.name_szt);
+		name = res.getString(R.string.name_cac);
 	}
 
 	@SuppressWarnings("unchecked")
-	final static ShenzhenTong load(Iso7816.Tag tag, Resources res) {
+	final static ChanganTong load(Iso7816.Tag tag, Resources res) {
 
 		/*--------------------------------------------------------------*/
 		// select PSF (1PAY.SYS.DDF01)
@@ -64,9 +65,9 @@ final class ShenzhenTong extends PbocCard {
 				/*--------------------------------------------------------------*/
 				// build result string
 				/*--------------------------------------------------------------*/
-				final ShenzhenTong ret = new ShenzhenTong(tag, res);
+				final ChanganTong ret = new ChanganTong(tag, res);
 				ret.parseBalance(CASH);
-				ret.parseInfo(INFO, 4, true);
+				ret.parseInfo(INFO, 4, false);
 				ret.parseLog(LOG);
 
 				return ret;

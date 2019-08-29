@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+task buildJar(type: Jar, dependsOn: ['build']) {
+//导出的jar文件名称
+    archiveName = 'spNfc.jar'
+//从哪个目录打包jar
+    from('build/intermediates/classes/debug')
+//导出的jar文件的存放目录（未指定则默认存放在build/libs下）
+//去掉不要的类
+    exclude('com/camare/fingger_print/BuildConfig.class')
+    exclude('com/camare/fingger_print/BuildConfig\$*.class')
+    exclude('**/R.class')
+    exclude('**/R\$*.class')
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

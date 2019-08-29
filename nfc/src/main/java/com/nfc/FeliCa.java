@@ -13,15 +13,13 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech;
+package com.nfc;
+
+import android.nfc.tech.NfcF;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import android.nfc.tech.NfcF;
-
-import com.sinpo.xnfc.Util;
 
 public class FeliCa {
 	public static final byte[] EMPTY = {};

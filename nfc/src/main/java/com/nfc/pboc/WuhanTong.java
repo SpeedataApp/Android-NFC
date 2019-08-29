@@ -13,15 +13,15 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card.pboc;
-
-import java.util.ArrayList;
+package com.nfc.pboc;
 
 import android.content.res.Resources;
 
-import com.sinpo.xnfc.R;
-import com.sinpo.xnfc.Util;
-import com.sinpo.xnfc.tech.Iso7816;
+import com.nfc.Iso7816;
+import com.nfc.R;
+import com.nfc.Util;
+
+import java.util.ArrayList;
 
 final class WuhanTong extends PbocCard {
 	private final static int SFI_INFO = 5;

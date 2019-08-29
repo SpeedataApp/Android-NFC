@@ -13,18 +13,18 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card.pboc;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package com.nfc.pboc;
 
 import android.content.res.Resources;
 import android.nfc.tech.IsoDep;
 
-import com.sinpo.xnfc.R;
-import com.sinpo.xnfc.Util;
-import com.sinpo.xnfc.tech.card.CardManager;
-import com.sinpo.xnfc.tech.Iso7816;
+import com.nfc.CardManager;
+import com.nfc.Iso7816;
+import com.nfc.R;
+import com.nfc.Util;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PbocCard {
 	protected final static byte[] DFI_MF = { (byte) 0x3F, (byte) 0x00 };

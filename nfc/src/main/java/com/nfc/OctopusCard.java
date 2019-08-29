@@ -13,14 +13,10 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card;
+package com.nfc;
 
 import android.content.res.Resources;
 import android.nfc.tech.NfcF;
-
-import com.sinpo.xnfc.R;
-import com.sinpo.xnfc.Util;
-import com.sinpo.xnfc.tech.FeliCa;
 
 final class OctopusCard {
 	private static final int SYS_SZT = 0x8005;

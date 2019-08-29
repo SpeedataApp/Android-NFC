@@ -13,13 +13,10 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card;
+package com.nfc;
 
 import android.content.res.Resources;
 import android.nfc.tech.NfcV;
-
-import com.sinpo.xnfc.R;
-import com.sinpo.xnfc.Util;
 
 final class VicinityCard {
 	private static final int SYS_UNKNOWN = 0x00000000;

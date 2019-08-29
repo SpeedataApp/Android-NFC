@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">NFCard</string>
 	<string name="menu_clear">清屏</string>
 	<string name="menu_help">幫助</string>
 	<string name="menu_about">關於</string>
@@ -9,7 +8,7 @@
 	<string name="btn_exit">退出</string>
 	<string name="tip_nfc_notfound">沒有NFC硬件！</string>
 	<string name="tip_nfc_disabled">NFC已禁用</string>
-	<string name="tip_nfc_enabled">NFC已啟用</string>	
+	<string name="tip_nfc_enabled">NFC已啟用</string>
 	<string name="msg_reading">讀取中...</string>
 	<string name="msg_nonfc">沒有找到NFC硬件，程序無法工作！</string>
 	<string name="msg_nfcdisabled">NFC已被禁用，請先啟用該硬件。可以使用下方的 ‘設置’ 按鈕控制NFC傳感器的開關。</string>

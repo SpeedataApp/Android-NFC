@@ -13,27 +13,35 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc.tech.card.pboc;
-
-import java.util.ArrayList;
+package com.nfc.pboc;
 
 import android.content.res.Resources;
 
-import com.sinpo.xnfc.R;
-import com.sinpo.xnfc.tech.Iso7816;
+import com.nfc.Iso7816;
+import com.nfc.R;
+import com.nfc.Util;
 
-final class ChanganTong extends PbocCard {
-	private final static byte[] DFN_SRV = { (byte) 0xA0, (byte) 0x00,
-			(byte) 0x00, (byte) 0x00, (byte) 0x03, (byte) 0x86, (byte) 0x98,
-			(byte) 0x07, (byte) 0x01, };
+import java.util.ArrayList;
 
-	private ChanganTong(Iso7816.Tag tag, Resources res) {
+final class YangchengTong extends PbocCard {
+	private final static byte[] DFN_SRV = { (byte) 'P', (byte) 'A', (byte) 'Y',
+			(byte) '.', (byte) 'A', (byte) 'P', (byte) 'P', (byte) 'Y', };
+
+	private final static byte[] DFN_SRV_S1 = { (byte) 'P', (byte) 'A',
+			(byte) 'Y', (byte) '.', (byte) 'P', (byte) 'A', (byte) 'S',
+			(byte) 'D', };
+
+	private final static byte[] DFN_SRV_S2 = { (byte) 'P', (byte) 'A',
+			(byte) 'Y', (byte) '.', (byte) 'T', (byte) 'I', (byte) 'C',
+			(byte) 'L', };
+
+	private YangchengTong(Iso7816.Tag tag, Resources res) {
 		super(tag);
-		name = res.getString(R.string.name_cac);
+		name = res.getString(R.string.name_lnt);
 	}
 
 	@SuppressWarnings("unchecked")
-	final static ChanganTong load(Iso7816.Tag tag, Resources res) {
+	final static YangchengTong load(Iso7816.Tag tag, Resources res) {
 
 		/*--------------------------------------------------------------*/
 		// select PSF (1PAY.SYS.DDF01)
@@ -60,20 +68,38 @@ final class ChanganTong extends PbocCard {
 				/*--------------------------------------------------------------*/
 				// read log file, record (24)
 				/*--------------------------------------------------------------*/
-				ArrayList<byte[]> LOG = readLog(tag, SFI_LOG);
+				ArrayList<byte[]> LOG1 = (tag.selectByName(DFN_SRV_S1).isOkey()) ? readLog(
+						tag, SFI_LOG) : null;
+
+				ArrayList<byte[]> LOG2 = (tag.selectByName(DFN_SRV_S2).isOkey()) ? readLog(
+						tag, SFI_LOG) : null;
 
 				/*--------------------------------------------------------------*/
 				// build result string
 				/*--------------------------------------------------------------*/
-				final ChanganTong ret = new ChanganTong(tag, res);
+				final YangchengTong ret = new YangchengTong(tag, res);
 				ret.parseBalance(CASH);
-				ret.parseInfo(INFO, 4, false);
-				ret.parseLog(LOG);
+				ret.parseInfo(INFO);
+				ret.parseLog(LOG1, LOG2);
 
 				return ret;
 			}
 		}
 
 		return null;
+	}
+
+	private void parseInfo(Iso7816.Response info) {
+		if (!info.isOkey() || info.size() < 50) {
+			serl = version = date = count = null;
+			return;
+		}
+
+		final byte[] d = info.getBytes();
+		serl = Util.toHexString(d, 11, 5);
+		version = String.format("%02X.%02X", d[44], d[45]);
+		date = String.format("%02X%02X.%02X.%02X - %02X%02X.%02X.%02X", d[23],
+				d[24], d[25], d[26], d[27], d[28], d[29], d[30]);
+		count = null;
 	}
 }

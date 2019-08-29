@@ -13,7 +13,7 @@ along with Wget.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permission under GNU GPL version 3 section 7 */
 
-package com.sinpo.xnfc;
+package com.nfc;
 
 public final class Util {
 	private final static char[] HEX = { '0', '1', '2', '3', '4', '5', '6', '7',
